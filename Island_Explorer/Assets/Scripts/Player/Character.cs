@@ -22,4 +22,12 @@ public class Character : MonoBehaviour
     public SprintJumpState springJumpSM;
     public LandingState landingSM;
     #endregion
+
+    private void Start()
+    {
+        walkSM = new WalkState();
+        idleSM = new IdleState();
+        crouchSM = new CrouchState();
+
+    }
 }
