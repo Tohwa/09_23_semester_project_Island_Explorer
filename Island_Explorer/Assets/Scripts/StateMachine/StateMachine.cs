@@ -13,7 +13,7 @@ public class StateMachine
         curPlayerState.EnterState();
     }
 
-    public void Update()
+    public void StateUpdate()
     {
         IStates newState;
         newState = curPlayerState.CheckState();

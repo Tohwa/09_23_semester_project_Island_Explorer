@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Character : MonoBehaviour
 {
     #region Fields
     [Header("Controls")]
-    public float plazerSpeed = 5.0f;
+    public float playerSpeed = 5.0f;
     public float crouchSpeed = 2.0f;
     public float sprintSpeed = 7.0f;
     public float jumpHeight = 0.8f;
@@ -14,20 +15,8 @@ public class Character : MonoBehaviour
     public float rotationSpeed = 5.0f;
     public float crouchColliderHeight = 1.35f;
 
-    public WalkState walkSM;
-    public IdleState idleSM;
-    public CrouchState crouchSM;
-    public SprintState sprintSM;
-    public JumpState jumpSM;
-    public SprintJumpState springJumpSM;
-    public LandingState landingSM;
+    public float gravityValue = -9.81f;
+    public PlayerInput playerInput;
+    public CharacterController controller;
     #endregion
-
-    private void Start()
-    {
-        walkSM = new WalkState();
-        idleSM = new IdleState();
-        crouchSM = new CrouchState();
-
-    }
 }
