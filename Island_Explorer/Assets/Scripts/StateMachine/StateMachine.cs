@@ -5,26 +5,26 @@ using UnityEngine;
 
 public class StateMachine
 {
-    private IStates curState;
+    private IStates curPlayerState;
 
     public void Start()
     {
-        curState = new IdleState();
-        curState.EnterState();
+        curPlayerState = new IdleState();
+        curPlayerState.EnterState();
     }
 
     public void Update()
     {
         IStates newState;
-        newState = curState.CheckState();
+        newState = curPlayerState.CheckState();
 
         if (newState != null)
         {
-            curState.ExitState();
-            curState = newState;
-            curState.EnterState();
+            curPlayerState.ExitState();
+            curPlayerState = newState;
+            curPlayerState.EnterState();
         }
 
-        curState.UpdateState();
+        curPlayerState.UpdateState();
     }
 }
