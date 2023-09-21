@@ -1,25 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WalkState: BaseState
 {
     public override void EnterState()
     {
-        base.EnterState();
+
     }
 
-    public override void HandleInput()
+    public override void HandleInput(InputAction.CallbackContext ctx)
     {
-        base.HandleInput();
-
         input = moveAction.ReadValue<Vector2>();        
     }
 
     public override void PhysicsUpdate()
     {
-        base.PhysicsUpdate();
-
         Vector3 movement = new Vector3(input.x, 0f, input.y) * character.playerSpeed * Time.deltaTime;
         movement = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0) * movement;
         movement = Vector3.ClampMagnitude(movement, 1) * 3;
@@ -54,6 +51,6 @@ public class WalkState: BaseState
 
     public override void ExitState()
     {
-        base.ExitState();
+
     }
 }

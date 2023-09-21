@@ -16,7 +16,36 @@ public class Character : MonoBehaviour
     public float crouchColliderHeight = 1.35f;
 
     public float gravityValue = -9.81f;
+
+    [Header("Components")]
     public PlayerInput playerInput;
     public CharacterController controller;
+    public StateMachine stateMachine;
     #endregion
+
+    private void Start()
+    {
+        if (stateMachine.curPlayerState != null)
+        {
+            stateMachine.Start();
+        }
+        else
+        {
+            Debug.LogError("StateMachine is null.");
+        }       
+    }
+
+    private void Update()
+    {
+        if (stateMachine.curPlayerState != null)
+        {
+            stateMachine.StateUpdate();
+        }
+        else
+        {
+            Debug.LogError("StateMachine is null.");
+        }
+        
+    }
+
 }

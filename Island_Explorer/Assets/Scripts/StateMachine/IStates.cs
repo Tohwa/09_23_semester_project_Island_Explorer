@@ -7,7 +7,7 @@ public interface IStates
 {
     public void EnterState();
 
-    public void HandleInput();
+    public void HandleInput(InputAction.CallbackContext ctx);
 
     public void LogicUpdate();
 

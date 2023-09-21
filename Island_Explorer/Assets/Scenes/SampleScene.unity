@@ -547,8 +547,8 @@ GameObject:
   - component: {fileID: 2042442583}
   - component: {fileID: 2042442582}
   - component: {fileID: 2042442581}
-  - component: {fileID: 2042442580}
   - component: {fileID: 2042442587}
+  - component: {fileID: 2042442588}
   m_Layer: 0
   m_Name: player TMP
   m_TagString: Untagged
@@ -556,28 +556,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2042442580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2042442579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2940e78f9487504fac3aa57f9b9540d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSpeed: 5
-  crouchSpeed: 2
-  sprintSpeed: 7
-  jumpHeight: 0.8
-  gravityMultiplier: 2
-  rotationSpeed: 5
-  crouchColliderHeight: 1.35
-  gravityValue: -9.81
-  playerInput: {fileID: 2042442581}
-  controller: {fileID: 2042442587}
 --- !u!114 &2042442581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,6 +745,28 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2042442588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042442579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2940e78f9487504fac3aa57f9b9540d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 5
+  crouchSpeed: 2
+  sprintSpeed: 7
+  jumpHeight: 0.8
+  gravityMultiplier: 2
+  rotationSpeed: 5
+  crouchColliderHeight: 1.35
+  gravityValue: -9.81
+  playerInput: {fileID: 2042442581}
+  controller: {fileID: 2042442587}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

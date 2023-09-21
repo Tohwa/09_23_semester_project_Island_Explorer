@@ -20,8 +20,6 @@ public class IdleState : BaseState
 
     public override void EnterState()
     {
-        base.EnterState();
-
         crouch = false;
         jump = false;
         sprint = false;
@@ -33,9 +31,9 @@ public class IdleState : BaseState
         gravityValue = character.gravityValue;
     }
 
-    public override void HandleInput()
+    public override void HandleInput(InputAction.CallbackContext ctx)
     {
-        base.HandleInput();
+
     }
 
     public override IStates CheckState()

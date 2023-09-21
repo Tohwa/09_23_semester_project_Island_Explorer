@@ -7,7 +7,6 @@ public abstract class BaseState : IStates
 {
     #region Fields
     public Character character;
-    public StateMachine stateMachine;
 
     protected Vector3 gravityVelocity;
     protected Vector3 Velocity;
@@ -39,7 +38,7 @@ public abstract class BaseState : IStates
         return null;
     }
 
-    public virtual void HandleInput()
+    public virtual void HandleInput(InputAction.CallbackContext ctx)
     {
 
     }

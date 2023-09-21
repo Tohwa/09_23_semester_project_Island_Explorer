@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
+using UnityEditor;
 using UnityEngine;
 
-public class StateMachine
+
+public class StateMachine : MonoScript
 {
-    private IStates curPlayerState;
+    public IStates curPlayerState;
 
     public void Start()
     {
