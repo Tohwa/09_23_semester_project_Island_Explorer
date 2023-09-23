@@ -3,44 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public abstract class BaseState : IStates
+public abstract class BaseState
 {
     #region Fields
-    public Character character;
+    protected Player player;
+    protected StateMachine stateMachine;
+    protected PlayerData playerData;
 
-    protected Vector3 gravityVelocity;
-    protected Vector3 Velocity;
-    protected Vector2 input;
+    protected float startTime;
 
-    public InputAction moveAction;
-    public InputAction lookAction;
-    public InputAction jumpAction;
-    public InputAction crouchAction;
-    public InputAction sprintAction;
+    //private string animBoolName;
     #endregion
     
-    public BaseState()
+    public BaseState(Player _player, StateMachine _stateMachine, PlayerData _playerData/*, string _animeBoolName */)
     {
-        moveAction = character.playerInput.actions["Move"];
-        lookAction = character.playerInput.actions["Look"];
-        jumpAction = character.playerInput.actions["Jump"];
-        crouchAction = character.playerInput.actions["Crouch"];
-        sprintAction = character.playerInput.actions["Sprint"];
+        player = _player;
+        stateMachine = _stateMachine;
+        playerData = _playerData;
+        //animBoolName = _animBoolName;
     }
 
     public virtual void EnterState()
     {
-        Debug.Log("Player is now in:" + this.ToString());
-    }
-
-    public virtual IStates CheckState()
-    {
-        return null;
-    }
-
-    public virtual void HandleInput(InputAction.CallbackContext ctx)
-    {
-
+        Debug.Log("Player has entered a new state!");
+        //player.anim.setBool(animBoolName, true);
+        startTime = Time.time;
     }
 
     public virtual void LogicUpdate()
@@ -60,7 +47,8 @@ public abstract class BaseState : IStates
 
     public virtual void ExitState()
     {
-        Debug.Log("Player is no longer in:" + this.ToString());
+        Debug.Log("Player has left its current state.");
+        //player.anim.setBool(animBoolName, false);
     }
 
 }

@@ -5,28 +5,20 @@ using UnityEditor;
 using UnityEngine;
 
 
-public class StateMachine : MonoScript
+public class StateMachine
 {
-    public IStates curPlayerState;
+    public BaseState curPlayerState;
 
-    public void Start()
+    public void Start(BaseState _startState)
     {
-        curPlayerState = new IdleState();
+        curPlayerState = _startState;
         curPlayerState.EnterState();
     }
 
-    public void StateUpdate()
+    public void ChangeState(BaseState _newState)
     {
-        IStates newState;
-        newState = curPlayerState.CheckState();
-
-        if (newState != null)
-        {
-            curPlayerState.ExitState();
-            curPlayerState = newState;
-            curPlayerState.EnterState();
-        }
-
-        curPlayerState.UpdateState();
+        curPlayerState.ExitState();
+        curPlayerState = _newState;
+        curPlayerState.EnterState();
     }
 }
