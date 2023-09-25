@@ -19,6 +19,10 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private PlayerData playerData;
+    [SerializeField]
+    private SoundRequestCollection requests;
+    [SerializeField]
+    private AudioData footSteps;
     #endregion
 
     private void Awake()
@@ -41,6 +45,14 @@ public class Player : MonoBehaviour
     private void Update()
     {
         StateMachine.curPlayerState.LogicUpdate();
+
+        if (StateMachine.curPlayerState == MoveState)
+        {
+            if (Time.frameCount % 60 == 0)
+            {
+                requests.Add(SoundRequest.Request(footSteps));
+            }
+        }
     }
 
     private void FixedUpdate()
