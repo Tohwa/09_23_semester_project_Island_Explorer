@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarnivorePatrolState : BaseState
 {
-    public CarnivorePatrolState(Player _player, StateMachine _stateMachine, PlayerData _playerData) : base(_player, _stateMachine, _playerData)
+    public CarnivorePatrolState(Enemy _enemy, StateMachine _stateMachine, NPCData _npcData) : base(_enemy, _stateMachine, _npcData)
     {
     }
 

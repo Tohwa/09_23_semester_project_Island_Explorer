@@ -8,7 +8,7 @@ public class CarnivoreHuntingState : BaseState
     private NavMeshAgent agent;
     private Transform target;
 
-    public CarnivoreHuntingState(Player _player, StateMachine _stateMachine, PlayerData _playerData) : base(_player, _stateMachine, _playerData)
+    public CarnivoreHuntingState(Enemy _enemy, StateMachine _stateMachine, NPCData _npcData) : base(_enemy, _stateMachine, _npcData)
     {
     }
 
