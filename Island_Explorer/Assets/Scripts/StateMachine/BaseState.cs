@@ -7,14 +7,33 @@ public abstract class BaseState
 {
     #region Fields
     protected Player player;
+    protected Enemy enemy;
+    protected NeutralNPC animal;
     protected StateMachine stateMachine;
     protected PlayerData playerData;
+    protected NPCData npcData;
 
     protected float startTime;
 
     //private string animBoolName;
     #endregion
-    
+
+    public BaseState(Enemy _enemy, StateMachine _stateMachine, NPCData _npcData/*, string _animBoolName */)
+    {
+        enemy = _enemy;
+        stateMachine = _stateMachine;
+        npcData = _npcData;
+        //animBoolName = _animBoolName;
+    }
+
+    public BaseState(NeutralNPC _animal, StateMachine _stateMachine, NPCData _npcData/*, string _animeBoolName */)
+    {
+        animal = _animal;
+        stateMachine = _stateMachine;
+        npcData = _npcData;
+        //animBoolName = _animBoolName;
+    }
+
     public BaseState(Player _player, StateMachine _stateMachine, PlayerData _playerData/*, string _animeBoolName */)
     {
         player = _player;
