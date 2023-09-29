@@ -7,7 +7,7 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private string tag = "AudioManager";
+    [SerializeField] private string managerTag = "AudioManager";
 
     private IObjectPool<GameObject> pool;
 
@@ -18,8 +18,8 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        gameObject.tag = tag;
-        GameObject[] tmp = GameObject.FindGameObjectsWithTag(tag);
+        gameObject.tag = managerTag;
+        GameObject[] tmp = GameObject.FindGameObjectsWithTag(managerTag);
         if(tmp.Length > 1)
         {
             Destroy(gameObject);

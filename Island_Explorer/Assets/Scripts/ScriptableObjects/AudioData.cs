@@ -11,5 +11,4 @@ public class AudioData : ScriptableObject
 
     [SerializeField][Tooltip("hallo")][Range(0f, 1f)] private float volume = 1.0f;
     [SerializeField] private AudioClip[] clips;
-
 }
