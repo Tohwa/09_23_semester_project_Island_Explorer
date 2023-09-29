@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         InputHandler = GetComponent<PlayerInputHandler>();
         RB = GetComponent<Rigidbody>();
 
-        StateMachine.Start(IdleState);
+        StateMachine.InitPlayerState(IdleState);
     }
 
     private void Update()

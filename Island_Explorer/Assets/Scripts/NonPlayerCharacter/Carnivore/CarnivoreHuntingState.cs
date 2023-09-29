@@ -5,9 +5,6 @@ using UnityEngine.AI;
 
 public class CarnivoreHuntingState : BaseState
 {
-    private NavMeshAgent agent;
-    private Transform target;
-
     public CarnivoreHuntingState(Enemy _enemy, StateMachine _stateMachine, NPCData _npcData) : base(_enemy, _stateMachine, _npcData)
     {
     }
